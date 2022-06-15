@@ -1,14 +1,13 @@
 package action
 
 import (
+	"github.com/linbuxiao/algorithm/pkg/app"
 	"github.com/linbuxiao/algorithm/pkg/model"
 	"github.com/urfave/cli/v2"
 )
 
-const defaultNameSpace = "default"
-
-var NewProblem = &cli.Command{
-	Name: "newproblem",
+var Create = &cli.Command{
+	Name: "create",
 	Flags: []cli.Flag{
 		&cli.StringFlag{
 			Name:    "namespace",
@@ -19,7 +18,7 @@ var NewProblem = &cli.Command{
 		url := ctx.Args().First()
 		ns := ctx.String("namespace")
 		if ns == "" {
-			ns = defaultNameSpace
+			ns = app.DefaultNameSpace
 		}
 		problem := model.NewProblemRepo(url, ns)
 		if err := problem.CreateProblemFile(); err != nil {

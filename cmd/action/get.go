@@ -1,7 +1,6 @@
 package action
 
 import (
-	"fmt"
 	"github.com/linbuxiao/algorithm/pkg/util"
 	"github.com/olekukonko/tablewriter"
 	"github.com/urfave/cli/v2"
@@ -56,7 +55,7 @@ var Get = &cli.Command{
 					problemName,
 					statusStr,
 					ns,
-					fmt.Sprintf("https://leetcode.cn/problems/%s/", util.TransformFileNameToSlug(problemName)),
+					util.GetLeetcodeUrlFromFileName(problemName),
 				})
 			}
 		}

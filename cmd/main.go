@@ -11,8 +11,9 @@ func main() {
 	app := &cli.App{
 		Name: "Algorithm",
 		Commands: []*cli.Command{
-			action.NewProblem,
+			action.Create,
 			action.Get,
+			action.Set,
 		},
 	}
 

@@ -65,7 +65,7 @@ func GetNameByAbsPath(abs string) string {
 	return arr[len(arr)-1]
 }
 
-func SetProblemFileName(name string, finished bool) string {
+func GetProblemFileName(name string, finished bool) string {
 	if finished {
 		return fmt.Sprintf("%s.true.go", name)
 	}
@@ -77,4 +77,8 @@ func GetProblemFromFileName(name string) (string, bool) {
 		return strings.TrimSuffix(name, app.FinishedProblemSuffix), true
 	}
 	return strings.TrimSuffix(name, app.UnFinishedProblemSuffix), true
+}
+
+func GetLeetcodeUrlFromFileName(name string) string {
+	return fmt.Sprintf("%s%s/", app.LeetCodeUrlPrefix, TransformFileNameToSlug(name))
 }

@@ -26,6 +26,7 @@ var _ = Describe("Model", func() {
 				testNameSpaceDir = "./test-namespace"
 				testProblemFile  = "./test-namespace/test_slug.go"
 				testNameSpace    = "test-namespace"
+				testSlug         = "test-slug"
 			)
 
 			var p *model.ProblemTmplRepo
@@ -35,6 +36,7 @@ var _ = Describe("Model", func() {
 					NameSpace:       testNameSpace,
 					NameSpaceDir:    testNameSpaceDir,
 					ProblemFileName: testProblemFile,
+					Slug:            testSlug,
 				}
 			})
 			AfterEach(func() {

@@ -7,4 +7,8 @@ const (
 	ProblemTemplateName     = "problem"
 	FinishedProblemSuffix   = ".true.go"
 	UnFinishedProblemSuffix = ".false.go"
+	DefaultNameSpace        = "default"
+	LeetCodeUrlPrefix       = "https://leetcode.cn/problems/"
+	Finished                = true
+	UnFinished              = false
 )
